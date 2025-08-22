@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { MapPin, Ruler, Eye } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Property, getStatusColor, getStatusIcon } from '@/data/properties';
 
 interface PropertyCardProps {
@@ -68,13 +69,15 @@ export const PropertyCard = ({ property, index }: PropertyCardProps) => {
             <div className="text-2xl font-bold text-primary">
               {property.price}
             </div>
-            <Button 
-              size="sm" 
-              className="bg-primary hover:bg-primary-light transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              <Eye className="h-4 w-4 mr-2" />
-              View Details
-            </Button>
+            <Link to={`/property/${property.id}`}>
+              <Button 
+                size="sm" 
+                className="bg-primary hover:bg-primary-light transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Eye className="h-4 w-4 mr-2" />
+                View Details
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </Card>

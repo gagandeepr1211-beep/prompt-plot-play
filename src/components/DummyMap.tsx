@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { properties, Property, getStatusIcon } from '@/data/properties';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -237,7 +238,9 @@ export const DummyMap = ({ allProperties }: DummyMapProps) => {
 
                   <Button size="sm" className="w-full mt-3">
                     <Eye className="h-3 w-3 mr-2" />
-                    View Details
+                    <Link to={`/property/${selectedProperty.id}`} className="text-inherit">
+                      View Details
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
