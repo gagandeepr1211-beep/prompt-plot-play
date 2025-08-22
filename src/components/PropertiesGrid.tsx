@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
-import { properties } from '@/data/properties';
+import { Property } from '@/data/properties';
 import { PropertyCard } from './PropertyCard';
 
-export const PropertiesGrid = () => {
+interface PropertiesGridProps {
+  properties: Property[];
+}
+
+export const PropertiesGrid = ({ properties }: PropertiesGridProps) => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
